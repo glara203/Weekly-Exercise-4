@@ -22,3 +22,10 @@ tot.gold = oly %>%
   group_by(country)  %>% 
   summarise(num.gold = sum(gold))
 view(tot.gold)
+
+#c. For each year, how many total medals were given out?
+medals.per.year = oly  %>% 
+  group_by(year)   %>% 
+ summarise(tot.med = sum(total.medals, na.rm = TRUE))
+view(medals.per.year) #double checked my work
+
