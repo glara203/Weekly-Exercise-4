@@ -17,3 +17,10 @@ most.athletes = oly %>%
   select(country, athletes) %>% 
   arrange(desc(athletes))
 most.athletes
+
+#7b. For the following five countries, plot the number of gold medals earned over time:
+# United States, France, Germany, Russia, and China.
+
+oly %>% dplyr::filter(country %in% c("United States", "France", "Germany", "Russia", "China")) %>%
+ggplot(aes(year, gold, colour = country)) +
+  geom_line() + geom_point()
