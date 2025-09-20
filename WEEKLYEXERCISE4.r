@@ -16,3 +16,9 @@ oly = read_csv("Olympics.csv")
 total.medals <- oly$gold + oly$silver + oly$bronze #created new variable
 oly <- data.frame(oly, total.medals) #added variable to olympics data set
 view(oly) #double checked my work
+
+#b. For each country, how many gold medals has it won? 
+tot.gold = oly %>% 
+  group_by(country)  %>% 
+  summarise(num.gold = sum(gold))
+view(tot.gold)
